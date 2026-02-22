@@ -1,4 +1,4 @@
-# 🧠 WMH-LoRA: Parameter-Efficient White Matter Hyperintensity Segmentation via Foundation Model Adaptation
+DownloadCopy code# 🧠 WMH-LoRA: Parameter-Efficient White Matter Hyperintensity Segmentation via Foundation Model Adaptation
 
 > **0.78 Dice (Overall) · 0.81 Dice (Utrecht) · R² = 0.963 Volumetric Agreement**
 > Single-modality FLAIR MRI · 3.5% Trainable Parameters · LoRA rank-64 on MedSAM ViT-B
@@ -75,3 +75,169 @@ Despite this single-modality constraint, WMH-LoRA achieves competitive performan
 ## Key Innovations
 
 ### Architecture
+
+FLAIR Slice [1 × 512 × 512]
+│
+▼
+Learned Channel Adapter [Conv → BN → GELU → Conv, 1 → 3 ch]
+│
+▼
+┌─────────────────────────────────────────────────────────┐
+│  MedSAM ViT-B Encoder (FROZEN — 86M params)            │
+│                                                         │
+│  12 Transformer Blocks, each with:                      │
+│    ├── LoRA rank-64 on QKV         (attention)          │
+│    ├── LoRA rank-64 on projection  (attention)          │
+│    ├── LoRA rank-32 on MLP fc1     (feed-forward)       │
+│    └── LoRA rank-32 on MLP fc2     (feed-forward)       │
+│                                                         │
+│  LoRA dropout: 5% (regularisation)                      │
+└─────────────────────────────────────────────────────────┘
+│
+▼
+Feature Map [256 × 32 × 32]
+│
+▼
+┌─────────────────────────────────────────────────────────┐
+│  Multi-Scale Decoder with Deep Supervision              │
+│                                                         │
+│    Scale 1:  64×64   head ──→ Aux loss (weight 0.4)     │
+│    Scale 2: 128×128  head ──→ Aux loss (weight 0.3)     │
+│    Scale 3: 256×256  head ──→ Aux loss (weight 0.2)     │
+│    Scale 4: 512×512  head ──→ Aux loss (weight 0.1)     │
+│                                                         │
+│    Learned Fusion → Final Output                        │
+└─────────────────────────────────────────────────────────┘
+│
+▼
+WMH Segmentation Mask [1 × 512 × 512]
+
+### Training Configuration
+
+| Component | Details |
+|:---|:---|
+| **Loss Function** | Focal Loss (α=0.75, γ=2.0) + Soft Dice Loss + Boundary Loss (3× edge weight) with deep supervision at 4 scales |
+| **Optimiser** | AdamW (lr=3×10⁻⁴, weight decay=0.01, betas=0.9/0.999) |
+| **LR Schedule** | 5-epoch linear warmup → CosineAnnealingWarmRestarts (T₀=25, η\_min=10⁻⁶) |
+| **Effective Batch** | 16 (batch\_size=4 × gradient accumulation=4) |
+| **Epochs** | 100 with automatic Google Drive checkpointing every 10 epochs |
+| **Augmentation** | Random affine (±15°, ±10% scale), flips, 90° rotations, gamma correction, Gaussian noise, brightness and contrast jitter |
+| **Inference** | 8-fold TTA (4 flips + 4 rotations), optimised threshold=0.60, connected component filter ≥ 3 voxels |
+| **Hardware** | NVIDIA A100 40 GB (Google Colab Pro) |
+
+### Parameter Budget
+
+| Component | Parameters | Status |
+|:---|---:|:---|
+| MedSAM ViT-B Encoder | 86,000,000 | Frozen |
+| LoRA Layers (Attn + MLP) | ~2,400,000 | **Trainable** |
+| Channel Adapter | ~700 | **Trainable** |
+| Multi-Scale Decoder | ~580,000 | **Trainable** |
+| **Total Trainable** | **~3,000,000 (3.5%)** | |
+
+---
+
+## Installation & Usage
+
+### 1. Clone and Install
+
+```bash
+git clone https://github.com/hamidrezaamirii/WMH-Segmentation-MedSAM-LoRA.git
+cd WMH-Segmentation-MedSAM-LoRA
+pip install -r requirements.txt
+```
+
+### 2. Run the Full Pipeline
+
+Open `WMH_Segmentation_MedSAM_LoRA.ipynb` in [Google Colab](https://colab.research.google.com/) or locally in Jupyter. The notebook is fully self-contained and executes the following stages end-to-end:
+
+1. Automated Kaggle data download and FLAIR/mask filtering
+2. Stratified train/val/test split (seed=42 for reproducibility)
+3. MedSAM ViT-B construction with LoRA rank-64 injection
+4. 100-epoch training with automatic Drive checkpointing
+5. Post-training optimisation (threshold sweep, CC size search, TTA evaluation)
+6. Final test evaluation with Bland-Altman analysis and visualisation
+
+The notebook has been cleaned of all personal API keys and sensitive outputs. You will need to provide your own [Kaggle API credentials](https://www.kaggle.com/docs/api) for the data download step.
+
+### 3. Quick Inference with Pre-Trained Weights
+
+```python
+from wmh_lora.engine import WMHInferenceEngine
+
+engine = WMHInferenceEngine(model=model, device=device, img_size=512)
+
+# Predict full volume with 8-fold TTA
+prob_volume, nifti_ref = engine.predict_volume_probs(
+    "path/to/FLAIR.nii.gz", use_tta=True
+)
+
+# Apply optimised threshold and connected component filter
+binary_mask = engine.cc_filter(
+    engine.apply_threshold(prob_volume, threshold=0.60),
+    min_v=3
+)
+```
+
+> **Note:** Pre-trained weights (`best_ultimate.pth`, ~25 MB) are excluded from this repository due to size. Check [Releases](https://github.com/hamidrezaamirii/WMH-Segmentation-MedSAM-LoRA/releases) for download links.
+
+---
+
+## Repository Structure
+
+
+WMH-Segmentation-MedSAM-LoRA/
+├── README.md                                 # This document
+├── LICENSE                                   # MIT License
+├── requirements.txt                          # Python dependencies
+├── .gitignore                                # Excludes data, weights, API keys
+├── WMH_Segmentation_MedSAM_LoRA.ipynb       # Complete end-to-end pipeline
+└── assets/
+├── predictions.png                       # Segmentation overlay examples
+├── training_curves.png                   # Training convergence curves
+└── bland_altman.png                      # Volumetric agreement analysis
+
+---
+
+## Limitations and Future Directions
+
+**Known limitations.** The absence of T1 input means the model cannot leverage grey-white matter contrast to disambiguate WMH from enlarged perivascular spaces or cortical lesions, which likely accounts for the residual performance gap relative to multi-modal methods. Performance on subjects with very low lesion burden (<2 mL total WMH) remains an open challenge, as sparse small lesions occupy fewer than 0.01% of brain voxels.
+
+**Planned extensions:**
+
+- **Optional T1 channel:** Extend the channel adapter to accept T1 as an auxiliary input when available, with graceful degradation to FLAIR-only when it is not
+- **3D contextual encoding:** Incorporate inter-slice spatial coherence through 2.5D or lightweight 3D attention mechanisms
+- **External validation:** Evaluate on out-of-distribution cohorts (UK Biobank, ADNI, Rhineland Study) to assess generalisation beyond the WMH Challenge scanner sites
+
+---
+
+## License
+
+This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for full text.
+
+You are free to use, modify, and distribute this code for academic and commercial purposes with attribution. If you use this work in published research, please cite using the BibTeX entry below.
+
+---
+
+## Citation
+
+```bibtex
+@misc{amiri2025wmhlora,
+  title   = {WMH-LoRA: Parameter-Efficient White Matter Hyperintensity
+             Segmentation via Foundation Model Adaptation},
+  author  = {Hamidreza Amiri},
+  year    = {2025},
+  url     = {https://github.com/hamidrezaamirii/WMH-Segmentation-MedSAM-LoRA}
+}
+```
+
+---
+
+## Acknowledgements
+
+- [MedSAM](https://github.com/bowang-lab/MedSAM) — Foundation model pre-trained on 1.5M medical images (Ma et al., Nature Communications 2024)
+- [MICCAI WMH Segmentation Challenge](https://wmh.isi.uu.nl/) — Benchmark dataset and evaluation protocol (Kuijf et al., IEEE TMI 2019)
+- [MONAI](https://monai.io/) — Medical image transforms and evaluation metrics
+- [Segment Anything (Meta AI)](https://github.com/facebookresearch/segment-anything) — ViT-B backbone architecture
+- [LoRA (Hu et al., ICLR 2022)](https://arxiv.org/abs/2106.09685) — Parameter-efficient adaptation method
+- Training infrastructure provided by Google Colab Pro (NVIDIA A100 40 GB)
