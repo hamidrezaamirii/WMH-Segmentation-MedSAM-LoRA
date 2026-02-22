@@ -58,7 +58,7 @@ Despite this single-modality constraint, WMH-LoRA achieves competitive performan
 | Li et al. (Challenge Winner) | 2017 | FLAIR + T1 | 0.80 | ~31M (100%) |
 | nnU-Net | 2021 | FLAIR + T1 | 0.82 | ~30M (100%) |
 | UNETR | 2022 | FLAIR + T1 | 0.79 | ~102M (100%) |
-| **WMH-LoRA (This Work)** | **2025** | **FLAIR only** | **0.78** | **~3M (3.5%)** |
+| **WMH-LoRA (This Work)** | **2026** | **FLAIR only** | **0.78** | **~3M (3.5%)** |
 
 ---
 
@@ -222,11 +222,11 @@ You are free to use, modify, and distribute this code for academic and commercia
 ## Citation
 
 ```bibtex
-@misc{amiri2025wmhlora,
+@misc{amiri2026wmhlora,
   title   = {WMH-LoRA: Parameter-Efficient White Matter Hyperintensity
              Segmentation via Foundation Model Adaptation},
   author  = {Hamidreza Amiri},
-  year    = {2025},
+  year    = {2026},
   url     = {https://github.com/hamidrezaamirii/WMH-Segmentation-MedSAM-LoRA}
 }
 ```
