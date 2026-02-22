@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_metadata/
+
+# Model weights (too large for GitHub)
+*.pth
+*.pt
+*.ckpt
+*.safetensors
+weights/
+
+# Data (never commit patient data)
+*.nii
+*.nii.gz
+*.dcm
+data/
+wmh_flair_only/
+synthetic_wmh/
+
+# Environment
+.env
+.venv/
+env/
+venv/
+*.cfg
+!setup.cfg
+!requirements.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Colab artifacts
+sample_data/
+.config/
+drive/
+
+# Kaggle credentials (CRITICAL — never commit)
+kaggle.json
+.kaggle/
+
+# Training outputs
+checkpoint_ep*.pth
+final_pred_*.nii.gz
+*.log
+runs/
+wandb/
+
+# Large files
+*.zip
+*.tar.gz
+*.h5
+*.hdf5
