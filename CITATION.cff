@@ -5,9 +5,15 @@ message: "If you use this software or research artifact, please cite this reposi
 
 type: software
 
+version: "1.0.0"
+
+version: "1.0.0"
+
 authors:
   - family-names: Amiri
     given-names: Hamidreza
+    email: "hamidreza.amiri1998@gmail.com"
+    email: "hamidreza.amiri1998@gmail.com"
 
 repository-code: https://github.com/hamidrezaamirii/WMH-Segmentation-MedSAM-LoRA
 
