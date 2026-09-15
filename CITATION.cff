@@ -1,4 +1,5 @@
 cff-version: 1.2.0
+
 title: "WMH MedSAM-LoRA: Parameter-Efficient Adaptation of MedSAM for White Matter Hyperintensity Segmentation"
 
 message: "If you use this software or research artifact, please cite this repository."
@@ -7,12 +8,9 @@ type: software
 
 version: "1.0.0"
 
-version: "1.0.0"
-
 authors:
   - family-names: Amiri
     given-names: Hamidreza
-    email: "hamidreza.amiri1998@gmail.com"
     email: "hamidreza.amiri1998@gmail.com"
 
 repository-code: https://github.com/hamidrezaamirii/WMH-Segmentation-MedSAM-LoRA
