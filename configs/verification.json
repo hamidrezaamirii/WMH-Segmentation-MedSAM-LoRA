@@ -1,0 +1,66 @@
+{
+  "patients": [
+    42,
+    9,
+    9
+  ],
+  "slices": [
+    2506,
+    537,
+    537
+  ],
+  "image_shape": [
+    3,
+    1024,
+    1024
+  ],
+  "mask_shape": [
+    1024,
+    1024
+  ],
+  "box_shape": [
+    4
+  ],
+  "batches": [
+    1253,
+    269,
+    269
+  ],
+  "lora_layers": 80,
+  "rank": 4,
+  "residual_multiplier": 1,
+  "trainable_parameters": 673792,
+  "total_parameters": 94409264,
+  "batch_image_shape": [
+    2,
+    3,
+    1024,
+    1024
+  ],
+  "batch_mask_shape": [
+    2,
+    1024,
+    1024
+  ],
+  "batch_box_shape": [
+    2,
+    4
+  ],
+  "image_embeddings_shape": [
+    2,
+    256,
+    64,
+    64
+  ],
+  "low_res_logits_shape": [
+    2,
+    1,
+    256,
+    256
+  ],
+  "logits_shape": [
+    2,
+    1024,
+    1024
+  ]
+}

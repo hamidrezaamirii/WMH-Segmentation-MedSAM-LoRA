@@ -1,0 +1,987 @@
+[
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "27",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 13
+  },
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "31",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 27
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "101",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 21
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "55",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 20
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "64",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 23
+  },
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "17",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 24
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "53",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 20
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "105",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 24
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "132",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 24
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "115",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 21
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "56",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 17
+  },
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "0",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 35
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "104",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 26
+  },
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "2",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 29
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "58",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 16
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "109",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 17
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "51",
+    "shape": [
+      256,
+      232,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 22
+  },
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "37",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 37
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "113",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 29
+  },
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "41",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 23
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "57",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 17
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "52",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 15
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "59",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 20
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "102",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 28
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "61",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 24
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "63",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 20
+  },
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "33",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 29
+  },
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "6",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 21
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "108",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 18
+  },
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "19",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 34
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "106",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 15
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "67",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 26
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "69",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 24
+  },
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "8",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 25
+  },
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "39",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 29
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "114",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 25
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "103",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 28
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "126",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 23
+  },
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "25",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 22
+  },
+  {
+    "split": "train",
+    "site": "Singapore",
+    "patient_id": "54",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 17
+  },
+  {
+    "split": "train",
+    "site": "Amsterdam",
+    "patient_id": "100",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 25
+  },
+  {
+    "split": "train",
+    "site": "Utrecht",
+    "patient_id": "29",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 34
+  },
+  {
+    "split": "val",
+    "site": "Amsterdam",
+    "patient_id": "144",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 23
+  },
+  {
+    "split": "val",
+    "site": "Utrecht",
+    "patient_id": "35",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 24
+  },
+  {
+    "split": "val",
+    "site": "Singapore",
+    "patient_id": "68",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 30
+  },
+  {
+    "split": "val",
+    "site": "Amsterdam",
+    "patient_id": "110",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 22
+  },
+  {
+    "split": "val",
+    "site": "Singapore",
+    "patient_id": "62",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 28
+  },
+  {
+    "split": "val",
+    "site": "Singapore",
+    "patient_id": "50",
+    "shape": [
+      256,
+      232,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 23
+  },
+  {
+    "split": "val",
+    "site": "Amsterdam",
+    "patient_id": "107",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 18
+  },
+  {
+    "split": "val",
+    "site": "Utrecht",
+    "patient_id": "11",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 25
+  },
+  {
+    "split": "val",
+    "site": "Utrecht",
+    "patient_id": "4",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 28
+  },
+  {
+    "split": "test",
+    "site": "Singapore",
+    "patient_id": "60",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 25
+  },
+  {
+    "split": "test",
+    "site": "Amsterdam",
+    "patient_id": "112",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 22
+  },
+  {
+    "split": "test",
+    "site": "Utrecht",
+    "patient_id": "49",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 29
+  },
+  {
+    "split": "test",
+    "site": "Utrecht",
+    "patient_id": "23",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 18
+  },
+  {
+    "split": "test",
+    "site": "Amsterdam",
+    "patient_id": "137",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 25
+  },
+  {
+    "split": "test",
+    "site": "Singapore",
+    "patient_id": "66",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 23
+  },
+  {
+    "split": "test",
+    "site": "Singapore",
+    "patient_id": "65",
+    "shape": [
+      232,
+      256,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0,
+      2.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 32
+  },
+  {
+    "split": "test",
+    "site": "Utrecht",
+    "patient_id": "21",
+    "shape": [
+      240,
+      240,
+      48
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 48,
+    "positive_slices_raw_sum": 34
+  },
+  {
+    "split": "test",
+    "site": "Amsterdam",
+    "patient_id": "116",
+    "shape": [
+      132,
+      256,
+      83
+    ],
+    "mask_values": [
+      0.0,
+      1.0
+    ],
+    "slices": 83,
+    "positive_slices_raw_sum": 24
+  }
+]

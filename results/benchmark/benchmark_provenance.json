@@ -1,0 +1,143 @@
+{
+  "protocol": "paired_537_slices_1024_grid_binary_target_slice_macro_mean",
+  "training_performed": false,
+  "test_csv": "/content/drive/MyDrive/WMH_MedSAM_Project/manifests/test.csv",
+  "test_csv_sha256": "ffad3f17dad8f3c3eb2c719d8452373fe5f550aec6f1079d28e9283741f94541",
+  "ordered_test_patients": [
+    [
+      "Singapore",
+      "60"
+    ],
+    [
+      "Amsterdam",
+      "112"
+    ],
+    [
+      "Utrecht",
+      "49"
+    ],
+    [
+      "Utrecht",
+      "23"
+    ],
+    [
+      "Amsterdam",
+      "137"
+    ],
+    [
+      "Singapore",
+      "66"
+    ],
+    [
+      "Singapore",
+      "65"
+    ],
+    [
+      "Utrecht",
+      "21"
+    ],
+    [
+      "Amsterdam",
+      "116"
+    ]
+  ],
+  "site_slices": {
+    "Amsterdam": 249,
+    "Singapore": 144,
+    "Utrecht": 144
+  },
+  "checkpoints": {
+    "MedSAM-LoRA": {
+      "path": "/content/drive/MyDrive/WMH_MedSAM_Project/reproduction_runs/run_001/checkpoints/best_lora_wmh.pth",
+      "sha256": "803156a14542733964fc49927255d3cf523c50ad8b829fbd3db1d96b114290e4",
+      "run_label": "reproduction_run_001_epoch_9",
+      "epoch": 9,
+      "validation_dice": 0.8891934836701392,
+      "base_sha256": "34b34b78c1d18cb8c6bf84cf9c00e135d6d6c965699f3c0e31ef1bc9dcb5be74",
+      "adapter_parameters": 673792,
+      "total_parameters": 94409264,
+      "lora_layers": 80,
+      "rank": 4
+    },
+    "U-Net": {
+      "path": "/content/drive/MyDrive/WMH_MedSAM_Project/unet_baseline/checkpoints/best_unet_wmh.pth",
+      "sha256": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+      "run_label": "research_unet_epoch_20",
+      "epoch": 20,
+      "validation_dice": 0.660066099551439,
+      "parameters": 31042369,
+      "training_cohort_note": "Research positive-slice-only training/validation; no retraining here"
+    }
+  },
+  "data_sha256": {
+    "Singapore/60/image": "3094508a38a7cdb33be24101ca6f6b7e04be9c82c59a5e383e218f628da44fa1",
+    "Singapore/60/mask": "7f6abd2b54fe37a5b3c152bc0f77be86957464a3a16e546d2f7d6fe9e853a28b",
+    "Amsterdam/112/image": "3b0aeb8d97b379ac743faef73d898c47eda2f00810e3c5f4b900e14b88da2d86",
+    "Amsterdam/112/mask": "185df9698f461de1a4b0623436300e1eb3432a2e72b19942e9b88b767e45541a",
+    "Utrecht/49/image": "c08fc9b92318ae080716677b3c1d1305951f9babb09e11c7a06551cdaf56133f",
+    "Utrecht/49/mask": "e09dea64b90915f4eb631193af8ed68756899b9fa01e87a5737148e628b58fa1",
+    "Utrecht/23/image": "2222f70f21601c8f72631302f6c9c2292d98678345ef3206544594bf5f3d9ff9",
+    "Utrecht/23/mask": "8b9536c4a0c1c6667fe48c44ceb9fa254e8d66a43f47ba3d1592093560337722",
+    "Amsterdam/137/image": "d29060478c97ba9d2983f6d1f1ac63ea46dba9c48020d7180dc359adb334ff87",
+    "Amsterdam/137/mask": "7f2457bc4b16ccc6dec88c527971cf8d35664b37c272c2b48b4b9b6f8ed76bdd",
+    "Singapore/66/image": "6e2ba5ff07ad562ca16e2a3e6780e8ff4b5e379e9eda0d00c8a2db5d7bed1354",
+    "Singapore/66/mask": "f1a26f8c61895bb70056e85838a360edbb60c508edebdbd77081f4a742ee36ea",
+    "Singapore/65/image": "582a8bcae6559ed0b20b56fba7987eb84d69e75abf4780bc56408faf459b85a5",
+    "Singapore/65/mask": "6aea94bc3212d44d633de535c4029e262d7fc077ff40b8f4e7061ff6c0087da2",
+    "Utrecht/21/image": "86304c8dda8f2836d0187580e23eebf5db1bbf58c08888a176c6b44602079210",
+    "Utrecht/21/mask": "5185b77500f9fce5b63530140ed2cd98196df549931bab2f356db05fdec3c795",
+    "Amsterdam/116/image": "c44b42f24a5d83d27379f2432a673d4ab78c7eb1e74488c4ef22811a298b966e",
+    "Amsterdam/116/mask": "55de32c5d3f4905b24a1652b88dc1b95a2955b2e1fe91a5f13e3ed7da31d2958"
+  },
+  "medsam_source_sha256": {
+    "segment_anything/__init__.py": "1c22ab77db285b05b7e0a60cd417459182613ea5c746dffec6993a5f86cdbcf1",
+    "segment_anything/automatic_mask_generator.py": "77842dcb57c68e6eeaeed8a73c5fd079cd20967c2176daf1f115d5be2b2416d9",
+    "segment_anything/build_sam.py": "f8d09bf0233f3635f1a4d52c049390d8c115a501461f839631757616eda70519",
+    "segment_anything/modeling/__init__.py": "7bd468bf97fea2758bcdf18977dc8e60d6f90d1d02f5413a2870740005ecfbe8",
+    "segment_anything/modeling/common.py": "77581b8217e25c9ace51f7356fccd1a07ed2962d0f74aae2491f1001750565f1",
+    "segment_anything/modeling/image_encoder.py": "afd56922b0c2903f0ddcc75ea2819b42c534c6a830082794f8b93028a2d0c19c",
+    "segment_anything/modeling/mask_decoder.py": "270dea7cb1103e7ad04932b7c45e5b0d5ba0db0a8a13734a55bbce0e002fadf7",
+    "segment_anything/modeling/prompt_encoder.py": "6961f2b6b336501ecaed497b5642e2626d60a81e6b861455822678df256f3664",
+    "segment_anything/modeling/sam.py": "4a5eb2d47f10e2762c29eed6212c190a54709edc3ce01c1f136bce6d901473a6",
+    "segment_anything/modeling/transformer.py": "9bd360481a8f693e0b4054a229b5a5bb60efc38bb92e004de138009eba98cd94",
+    "segment_anything/predictor.py": "f4125a596a7871043c3f29217b9ff69dfc779490beec2f743d71d8ffe8c51a40",
+    "segment_anything/utils/__init__.py": "5f0b78fc8a07e575fded364917a215ebb440df00d90c789d9a3d801fee6f1223",
+    "segment_anything/utils/amg.py": "a308a3908bdab30515e0f68f4f3ff7dfd00a35055106b4e83635dc0c5df2ef11",
+    "segment_anything/utils/onnx.py": "1e89e913b79660ac1c8870c8d494adc23ee9f591e90c14d53ec6587e6ce18ade",
+    "segment_anything/utils/transforms.py": "6351ec01f61abfb69a529bb7de105f86a52d519e5d25c004c96b0e483b9791af"
+  },
+  "recorded_medsam_commit": "d71e8a1a99ad751840a22a7fa3ecfb4166fb1488",
+  "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+  "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+  "torch": "2.11.0+cu128",
+  "cuda_build": "12.8",
+  "gpu": "Tesla T4",
+  "cudnn": 91900,
+  "seed": 42,
+  "cuda_autocast": true,
+  "batch_size": 2,
+  "workers": 4,
+  "strict_deterministic_algorithms": true,
+  "cuda_matmul_allow_tf32": false,
+  "cudnn_allow_tf32": true,
+  "mask_rule": "target > 0; values 1 and 2 both foreground",
+  "score_size": [
+    1024,
+    1024
+  ],
+  "threshold": 0.5,
+  "unet_output_alignment": "bilinear logits to 1024x1024, align_corners=False, before sigmoid",
+  "medsam_prompt": "ground-truth box; zero box for empty masks",
+  "unet_prompt": "none",
+  "primary_aggregation": "arithmetic mean of per-slice metrics over 537 slices",
+  "patient_report": "mean of patient slice metrics, not volumetric Dice",
+  "reproduction_file_modified": false,
+  "csv_sha256": {
+    "benchmark_overall.csv": "88a5a0a2e59171e9fe245bdb6680a2d297bb64df8be91ae1ef043b5f7ce60087",
+    "benchmark_sitewise.csv": "5bc4517794d33770532ac780b3aecf44a466b47ac95811dfd15ed85f90a72700",
+    "benchmark_per_slice.csv": "9b06b440fecced214d4217af9b5ee5859faf03a95e19ab901bc63de88669905a",
+    "benchmark_paired_slices.csv": "62191a1f2a9e00f1b71b99dc31b91f3a09f1f4a8810d7f85b183c024891b79da",
+    "benchmark_positive_empty.csv": "f46ef95e26f37339b2045c6e52d31bed9a67df98ceff278969f896a9a7df78ed",
+    "benchmark_patient_slice_means.csv": "10bf5de1ad68a043985836b55b92a8f42927fd48cfb9917a6c98c7dc4599990a"
+  }
+}

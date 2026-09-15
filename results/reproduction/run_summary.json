@@ -1,0 +1,177 @@
+{
+  "run_mode": "train_fresh",
+  "evaluation_checkpoint": "/content/drive/MyDrive/WMH_MedSAM_Project/reproduction_runs/run_001/checkpoints/best_lora_wmh.pth",
+  "evaluation_checkpoint_sha256": "803156a14542733964fc49927255d3cf523c50ad8b829fbd3db1d96b114290e4",
+  "checkpoint_epoch": 9,
+  "checkpoint_validation_dice": 0.8891934836701392,
+  "overall_measured": [
+    {
+      "protocol": "F144_raw_target_batch_mean",
+      "batches": 269,
+      "dice": 0.8739121036680214,
+      "iou": 0.8125190277026488,
+      "sensitivity": 0.8881342224361285,
+      "precision": 0.911338925250844
+    },
+    {
+      "protocol": "F146_raw_target_robust_batch_mean",
+      "batches": 269,
+      "dice": 0.873912103065324,
+      "iou": 0.8125190255180827,
+      "sensitivity": 0.8881342204138747,
+      "precision": 0.9113389235218079
+    }
+  ],
+  "sitewise_measured": [
+    {
+      "site": "Singapore",
+      "samples": 144,
+      "dice": 0.847689675592791,
+      "iou": 0.7776064439638621,
+      "sensitivity": 0.8418027621066256,
+      "precision": 0.9019376604618498
+    },
+    {
+      "site": "Amsterdam",
+      "samples": 249,
+      "dice": 0.9219411209686821,
+      "iou": 0.8802695117665675,
+      "sensitivity": 0.9388836503107916,
+      "precision": 0.9162694971346734
+    },
+    {
+      "site": "Utrecht",
+      "samples": 144,
+      "dice": 0.831150083589683,
+      "iou": 0.7497249019237633,
+      "sensitivity": 0.8856031451562533,
+      "precision": 0.8134819587434222
+    }
+  ],
+  "historical_reference_comparison": [
+    {
+      "protocol": "F144_raw_target_batch_mean",
+      "metric": "dice",
+      "measured": 0.8739121036680214,
+      "historical_reference": 0.870626557933742,
+      "difference": 0.003285545734279416
+    },
+    {
+      "protocol": "F144_raw_target_batch_mean",
+      "metric": "iou",
+      "measured": 0.8125190277026488,
+      "historical_reference": 0.8106592358179591,
+      "difference": 0.0018597918846897654
+    },
+    {
+      "protocol": "F144_raw_target_batch_mean",
+      "metric": "sensitivity",
+      "measured": 0.8881342224361285,
+      "historical_reference": 0.8844656097536089,
+      "difference": 0.003668612682519612
+    },
+    {
+      "protocol": "F144_raw_target_batch_mean",
+      "metric": "precision",
+      "measured": 0.911338925250844,
+      "historical_reference": 0.9143334380091345,
+      "difference": -0.002994512758290435
+    },
+    {
+      "protocol": "F146_raw_target_robust_batch_mean",
+      "metric": "dice",
+      "measured": 0.873912103065324,
+      "historical_reference": 0.870626554684659,
+      "difference": 0.003285548380664971
+    },
+    {
+      "protocol": "F146_raw_target_robust_batch_mean",
+      "metric": "iou",
+      "measured": 0.8125190255180827,
+      "historical_reference": 0.8106592314171444,
+      "difference": 0.0018597941009383945
+    },
+    {
+      "protocol": "F146_raw_target_robust_batch_mean",
+      "metric": "sensitivity",
+      "measured": 0.8881342204138747,
+      "historical_reference": 0.8844656075979261,
+      "difference": 0.0036686128159485465
+    },
+    {
+      "protocol": "F146_raw_target_robust_batch_mean",
+      "metric": "precision",
+      "measured": 0.9113389235218079,
+      "historical_reference": 0.914333437139753,
+      "difference": -0.002994513617945116
+    }
+  ],
+  "verification": {
+    "patients": [
+      42,
+      9,
+      9
+    ],
+    "slices": [
+      2506,
+      537,
+      537
+    ],
+    "image_shape": [
+      3,
+      1024,
+      1024
+    ],
+    "mask_shape": [
+      1024,
+      1024
+    ],
+    "box_shape": [
+      4
+    ],
+    "batches": [
+      1253,
+      269,
+      269
+    ],
+    "lora_layers": 80,
+    "rank": 4,
+    "residual_multiplier": 1,
+    "trainable_parameters": 673792,
+    "total_parameters": 94409264,
+    "batch_image_shape": [
+      2,
+      3,
+      1024,
+      1024
+    ],
+    "batch_mask_shape": [
+      2,
+      1024,
+      1024
+    ],
+    "batch_box_shape": [
+      2,
+      4
+    ],
+    "image_embeddings_shape": [
+      2,
+      256,
+      64,
+      64
+    ],
+    "low_res_logits_shape": [
+      2,
+      1,
+      256,
+      256
+    ],
+    "logits_shape": [
+      2,
+      1024,
+      1024
+    ]
+  },
+  "nonbinary_mask_volumes": 25,
+  "prompt_protocol": "ground-truth-derived boxes; zero box for empty masks"
+}

@@ -1,0 +1,10 @@
+patient_id,image_path,mask_path,site,scanner
+144,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/144/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/144/wmh.nii,Amsterdam,GE3T
+35,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/35/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/35/wmh.nii,Utrecht,
+68,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/68/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/68/wmh.nii,Singapore,
+110,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/110/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/110/wmh.nii,Amsterdam,GE3T
+62,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/62/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/62/wmh.nii,Singapore,
+50,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/50/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/50/wmh.nii,Singapore,
+107,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/107/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/107/wmh.nii,Amsterdam,GE3T
+11,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/11/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/11/wmh.nii,Utrecht,
+4,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/4/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/4/wmh.nii,Utrecht,

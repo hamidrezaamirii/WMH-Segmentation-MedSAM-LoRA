@@ -1,0 +1,27 @@
+project:
+  name: WMH-MedSAM-LoRA
+  task: white_matter_hyperintensity_segmentation
+
+model:
+  backbone: MedSAM ViT-B
+  checkpoint: medsam_vit_b.pth
+
+lora:
+  type: custom_lora
+  rank: 4
+  layers: 80
+  trainable_parameters: 673792
+
+training:
+  epochs: 20
+  batch_size: 2
+  optimizer: AdamW
+  learning_rate: 1e-4
+  weight_decay: 1e-4
+
+evaluation:
+  validation_metric: dice
+  test_protocols:
+    - F144
+    - F146
+    - F148

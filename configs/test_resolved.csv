@@ -1,0 +1,10 @@
+patient_id,image_path,mask_path,site,scanner
+60,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/60/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/60/wmh.nii,Singapore,
+112,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/112/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/112/wmh.nii,Amsterdam,GE3T
+49,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/49/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/49/wmh.nii,Utrecht,
+23,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/23/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/23/wmh.nii,Utrecht,
+137,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/137/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/137/wmh.nii,Amsterdam,GE3T
+66,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/66/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/66/wmh.nii,Singapore,
+65,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/65/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/65/wmh.nii,Singapore,
+21,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/21/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/21/wmh.nii,Utrecht,
+116,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/116/pre/FLAIR.nii,/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/116/wmh.nii,Amsterdam,GE3T
