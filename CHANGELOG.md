@@ -2,7 +2,7 @@
 
 ## v1.0.0
 
-Initial flagship release.
+Initial reproducible release.
 
 Included:
 
