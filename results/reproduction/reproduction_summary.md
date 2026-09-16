@@ -126,10 +126,10 @@ Therefore, it should not be interpreted as fully automatic WMH segmentation.
 
 # Future Work
 
-Planned extensions:
+Potential extensions include:
 
-- comparison with U-Net and other baselines
-- statistical analysis
-- ablation studies
-- qualitative visualization
-- model release and deployment
+- additional external validation
+- LoRA placement ablation studies
+- automatic prompt generation
+- qualitative error analysis
+- model deployment studies
