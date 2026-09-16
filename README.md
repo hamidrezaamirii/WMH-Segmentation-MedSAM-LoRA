@@ -1,6 +1,6 @@
 # WMH MedSAM-LoRA
 
-Parameter-efficient adaptation of the MedSAM foundation model for white matter hyperintensity (WMH) segmentation using custom LoRA adaptation.
+Parameter-efficient adaptation of the MedSAM foundation model for white matter hyperintensity (WMH) segmentation using custom LoRA.
 
 This repository provides a reproducible implementation, benchmark evaluation, and statistical comparison against a U-Net baseline.
 
@@ -127,7 +127,7 @@ Results:
 | Precision | 2.83e-27 |
 | Sensitivity | 0.029 |
 
-The largest improvements were observed in Dice, IoU, and Precision.
+Statistically significant differences were observed for Dice, IoU, Precision, and Sensitivity under paired Wilcoxon signed-rank testing.
 
 ---
 
@@ -234,5 +234,5 @@ Future directions include:
 
 - automatic prompt generation
 - additional external validation
-- larger multi-center evaluation
+- larger external multi-center validation
 - ablation studies of LoRA placement
