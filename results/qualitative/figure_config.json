@@ -1,0 +1,39 @@
+{
+  "project_root": "/content/drive/MyDrive/WMH_MedSAM_Project",
+  "output_dir": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/final_supplementary_v1",
+  "test_csv": "/content/drive/MyDrive/WMH_MedSAM_Project/configs/Copy of original_test.csv",
+  "checkpoints": {
+    "unet": "/content/drive/MyDrive/WMH_MedSAM_Project/unet_baseline/checkpoints/best_unet_wmh.pth",
+    "frozen": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/frozen/a100_frozen_run004/checkpoints/best_lora_wmh.pth",
+    "lora_r8": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/checkpoints/best_lora_wmh.pth"
+  },
+  "manifests": [
+    "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/configs/medsam_cache_index.csv"
+  ],
+  "manual_cases": null,
+  "model_aliases": {
+    "U-Net": "unet",
+    "UNet": "unet",
+    "unet": "unet",
+    "Frozen MedSAM": "frozen",
+    "frozen": "frozen",
+    "LoRA-r4": "lora_r4",
+    "lora_r4": "lora_r4",
+    "LoRA-r8": "lora_r8",
+    "lora_r8": "lora_r8",
+    "MedSAM-LoRA": "lora_r4"
+  },
+  "require_verified_predictions": false,
+  "seed": 42,
+  "threshold": 0.5,
+  "score_size": [
+    1024,
+    1024
+  ],
+  "dpi": 600,
+  "mask_color": "#F0A202",
+  "overlay_alpha": 0.48,
+  "shared_insets": true,
+  "inset_min_size": 20,
+  "inset_padding": 5
+}

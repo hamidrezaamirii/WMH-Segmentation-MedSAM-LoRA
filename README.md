@@ -1,16 +1,24 @@
 # WMH MedSAM-LoRA
 
-Parameter-efficient adaptation of the MedSAM foundation model for white matter hyperintensity (WMH) segmentation using custom LoRA.
+## Parameter-Efficient Adaptation of MedSAM for White Matter Hyperintensity Segmentation
 
-This repository provides a reproducible implementation, benchmark evaluation, and statistical comparison against a U-Net baseline.
+This repository provides a reproducible implementation of MedSAM adaptation for white matter hyperintensity (WMH) segmentation using custom LoRA.
+
+The project includes:
+- MedSAM-LoRA training pipeline
+- LoRA ablation study
+- U-Net benchmark comparison
+- Multi-site evaluation
+- Statistical analysis
+- Qualitative visualization
 
 ---
 
 # Overview
 
-This project investigates whether a lightweight LoRA adaptation of MedSAM ViT-B can improve WMH segmentation performance while updating only a small fraction of model parameters.
+Medical foundation models such as MedSAM provide strong segmentation capabilities but full fine-tuning can be computationally expensive.
 
-The final model uses a custom LoRA implementation applied to MedSAM components without full model fine-tuning.
+This project investigates parameter-efficient adaptation of MedSAM ViT-B using LoRA, updating only a small fraction of model parameters while keeping the backbone frozen.
 
 ---
 
@@ -20,22 +28,29 @@ The final model uses a custom LoRA implementation applied to MedSAM components w
 
 - Model: MedSAM ViT-B
 - Adaptation: Custom LoRA
-- LoRA rank: 4
 - LoRA layers: 80
 
 Trainable parameters:
-
-```
 673,792
-```
 
 Total parameters:
-
-```
 94,409,264
-```
+
 
 Only LoRA parameters are optimized during training.
+
+---
+
+# LoRA Ablation
+
+Two LoRA configurations were evaluated:
+
+| Configuration | Validation Dice |
+|---|---:|
+| LoRA rank 4 | 0.8739 |
+| LoRA rank 8 | 0.8768 |
+
+The rank-8 configuration achieved the highest validation performance and was used for the final benchmark and qualitative analysis.
 
 ---
 
@@ -43,82 +58,74 @@ Only LoRA parameters are optimized during training.
 
 The project uses the WMH dataset with patient-level separation.
 
-## Dataset split
-
 | Split | Patients | Slices |
 |---|---:|---:|
 | Training | 42 | 2506 |
 | Validation | 9 | 537 |
 | Test | 9 | 537 |
 
-The benchmark evaluation uses the complete 537-slice test cohort:
+Test cohort:
 
-- Positive slices: 232
-- Empty slices: 305
-
-No slices were removed during evaluation.
+- 537 slices
+- 232 positive slices
+- 305 empty slices
 
 Sites:
 
-- Singapore
 - Amsterdam
+- Singapore
 - Utrecht
 
 ---
 
 # Training Configuration
 
-Training configuration:
-
 - Optimizer: AdamW
 - Epochs: 20
 - Batch size: 2
-- Best checkpoint selected using validation Dice
+- Learning rate: 1e-4
+- Weight decay: 1e-4
 
-Best checkpoint:
+Best validation Dice:
+0.8892
 
-```
-Epoch: 9
-Validation Dice: 0.8892
-```
 
 ---
 
-# Benchmark Protocol
+# Benchmark: U-Net vs MedSAM-LoRA
 
-The final MedSAM-LoRA checkpoint was compared against a previously trained U-Net baseline.
+Both models were evaluated on the identical held-out test cohort:
 
-Important:
+- same 537 slices
+- same ground-truth masks
+- same evaluation protocol
 
-- No retraining was performed during benchmarking.
-- Both models were evaluated on the identical 537 test slices.
-- The same ground-truth masks and scoring protocol were used.
-- Slice-level paired comparison was performed.
-
----
-
-# Benchmark Results
-
-## Overall Performance
+No retraining was performed during benchmarking.
 
 | Model | Dice | IoU | Sensitivity | Precision |
 |---|---:|---:|---:|---:|
 | MedSAM-LoRA | 0.8777 | 0.8177 | 0.8985 | 0.8849 |
 | U-Net | 0.6683 | 0.6125 | 0.8636 | 0.6999 |
 
-MedSAM-LoRA improved Dice by:
-
-```
+Dice improvement:
 +0.2094
-```
+
+
+---
+
+# Site-wise Generalization
+
+| Site | MedSAM-LoRA Dice | U-Net Dice |
+|---|---:|---:|
+| Amsterdam | 0.9220 | 0.6650 |
+| Singapore | 0.8477 | 0.6390 |
+| Utrecht | 0.8311 | 0.7033 |
 
 ---
 
 # Statistical Analysis
 
-Paired Wilcoxon signed-rank testing was performed on all 537 slices.
-
-Results:
+Paired slice-level Wilcoxon signed-rank testing was performed on the complete test cohort.
 
 | Metric | p-value |
 |---|---:|
@@ -127,41 +134,25 @@ Results:
 | Precision | 2.83e-27 |
 | Sensitivity | 0.029 |
 
-Statistically significant differences were observed for Dice, IoU, Precision, and Sensitivity under paired Wilcoxon signed-rank testing.
-
 ---
 
-# Site-wise Generalization
+# Qualitative Results
 
-MedSAM-LoRA consistently outperformed U-Net across all acquisition sites.
+Representative qualitative comparisons are provided in:
+figures/
 
-| Site | MedSAM Dice | U-Net Dice |
-|---|---:|---:|
-| Amsterdam | 0.9220 | 0.6650 |
-| Singapore | 0.8477 | 0.6390 |
-| Utrecht | 0.8311 | 0.7033 |
 
-Site-wise statistical analysis is provided in:
+Main comparison:
 
-```
-results/benchmark/statistical_analysis_by_site.md
-```
+- Input FLAIR
+- Ground truth
+- U-Net
+- MedSAM-LoRA (rank 8)
 
----
-
-# Figures
-
-## Overall comparison
-
-![Overall metrics](figures/overall_metrics_comparison.png)
-
-## Site-wise Dice comparison
-
-![Site-wise Dice](figures/sitewise_dice_comparison.png)
-
-## Per-slice Dice improvement
-
-![Dice distribution](figures/dice_difference_distribution.png)
+Additional qualitative analyses include:
+- Frozen MedSAM
+- LoRA rank 4
+- LoRA rank 8
 
 ---
 
@@ -169,70 +160,42 @@ results/benchmark/statistical_analysis_by_site.md
 
 The repository includes:
 
-- complete configuration files
-- environment specification
-- dataset split verification
+- training notebooks
+- benchmark notebooks
+- configuration files
 - checkpoint metadata
-- benchmark scripts
-- statistical analysis scripts
+- evaluation outputs
+- statistical analysis
 
 Important files:
-
-```
 configs/
 results/
 figures/
 src/
+notebooks/
 environment.yml
 requirements.txt
 CITATION.cff
-```
+
 
 ---
 
 # Limitations
 
-The current protocol evaluates box-prompted WMH segmentation using ground-truth-derived prompts.
+This repository evaluates a box-prompted WMH segmentation setting where prompts are derived from ground-truth annotations.
 
-This repository does not claim fully automatic segmentation.
+The current implementation is not presented as a fully automatic WMH segmentation system.
 
----
+Future work includes:
 
-# Repository Structure
-
-```
-WMH-MedSAM-LoRA/
-
-├── configs/
-├── checkpoints/
-├── results/
-├── figures/
-├── src/
-├── notebooks/
-├── README.md
-├── CITATION.cff
-└── environment.yml
-```
+- automatic prompt generation
+- external validation
+- larger multi-center evaluation
+- improved prompt strategies
 
 ---
 
 # Citation
 
-If you use this repository, please cite:
-
-See:
-
-```
+Please cite this repository using:
 CITATION.cff
-```
-
----
-
-# Future Work
-
-Future directions include:
-
-- automatic prompt generation
-- additional external validation
-- larger external multi-center validation
-- ablation studies of LoRA placement

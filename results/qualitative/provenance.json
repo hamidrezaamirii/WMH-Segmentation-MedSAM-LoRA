@@ -1,0 +1,989 @@
+{
+  "artifact": "main_paper_qualitative_figure",
+  "training_performed": false,
+  "source_notebook": "WMH_Qualitative_Segmentation_Figures_FINAL.ipynb",
+  "source_notebook_sha256": "8701b9dea61dfa755db288e85e3115461a0e57a096e758882034b5ef086d75ac",
+  "main_cases": 3,
+  "main_predictions": 6,
+  "main_models": [
+    "unet",
+    "lora_r8"
+  ],
+  "displayed_lora_rank": 8,
+  "rank_selection": {
+    "metric": "recorded overall Dice",
+    "protocol": "F144_raw_target_batch_mean",
+    "evidence": [
+      {
+        "model": "lora_r4",
+        "protocol": "F144_raw_target_batch_mean",
+        "dice": 0.8739121036680214,
+        "report_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r4/a100_run001/evaluation/run_summary.json",
+        "report_metadata": {
+          "run_mode": "train_fresh",
+          "evaluation_checkpoint": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r4/a100_run001/checkpoints/best_lora_wmh.pth",
+          "ablation_mode": "lora_r4",
+          "lora_enabled": true,
+          "lora_rank": 4,
+          "parameter_updates_enabled": true,
+          "evaluation_checkpoint_sha256": "fef10131c00ee63b5bb2e82d7c803655923c42e5c07b8080512a2658fcfb0f48",
+          "checkpoint_epoch": 9,
+          "checkpoint_validation_dice": 0.8891934836701392,
+          "overall_measured": [
+            {
+              "protocol": "F144_raw_target_batch_mean",
+              "batches": 269,
+              "dice": 0.8739121036680214,
+              "iou": 0.8125190277026488,
+              "sensitivity": 0.8881342224361285,
+              "precision": 0.911338925250844
+            },
+            {
+              "protocol": "F146_raw_target_robust_batch_mean",
+              "batches": 269,
+              "dice": 0.873912103065324,
+              "iou": 0.8125190255180827,
+              "sensitivity": 0.8881342204138747,
+              "precision": 0.9113389235218079
+            }
+          ],
+          "sitewise_measured": [
+            {
+              "site": "Singapore",
+              "samples": 144,
+              "dice": 0.847689675592791,
+              "iou": 0.7776064439638621,
+              "sensitivity": 0.8418027621066256,
+              "precision": 0.9019376604618498
+            },
+            {
+              "site": "Amsterdam",
+              "samples": 249,
+              "dice": 0.9219411209686821,
+              "iou": 0.8802695117665675,
+              "sensitivity": 0.9388836503107916,
+              "precision": 0.9162694971346734
+            },
+            {
+              "site": "Utrecht",
+              "samples": 144,
+              "dice": 0.831150083589683,
+              "iou": 0.7497249019237633,
+              "sensitivity": 0.8856031451562533,
+              "precision": 0.8134819587434222
+            }
+          ],
+          "historical_reference_comparison": [
+            {
+              "protocol": "F144_raw_target_batch_mean",
+              "metric": "dice",
+              "measured": 0.8739121036680214,
+              "historical_reference": 0.870626557933742,
+              "difference": 0.003285545734279416
+            },
+            {
+              "protocol": "F144_raw_target_batch_mean",
+              "metric": "iou",
+              "measured": 0.8125190277026488,
+              "historical_reference": 0.8106592358179591,
+              "difference": 0.0018597918846897654
+            },
+            {
+              "protocol": "F144_raw_target_batch_mean",
+              "metric": "sensitivity",
+              "measured": 0.8881342224361285,
+              "historical_reference": 0.8844656097536089,
+              "difference": 0.003668612682519612
+            },
+            {
+              "protocol": "F144_raw_target_batch_mean",
+              "metric": "precision",
+              "measured": 0.911338925250844,
+              "historical_reference": 0.9143334380091345,
+              "difference": -0.002994512758290435
+            },
+            {
+              "protocol": "F146_raw_target_robust_batch_mean",
+              "metric": "dice",
+              "measured": 0.873912103065324,
+              "historical_reference": 0.870626554684659,
+              "difference": 0.003285548380664971
+            },
+            {
+              "protocol": "F146_raw_target_robust_batch_mean",
+              "metric": "iou",
+              "measured": 0.8125190255180827,
+              "historical_reference": 0.8106592314171444,
+              "difference": 0.0018597941009383945
+            },
+            {
+              "protocol": "F146_raw_target_robust_batch_mean",
+              "metric": "sensitivity",
+              "measured": 0.8881342204138747,
+              "historical_reference": 0.8844656075979261,
+              "difference": 0.0036686128159485465
+            },
+            {
+              "protocol": "F146_raw_target_robust_batch_mean",
+              "metric": "precision",
+              "measured": 0.9113389235218079,
+              "historical_reference": 0.914333437139753,
+              "difference": -0.002994513617945116
+            }
+          ],
+          "verification": {
+            "patients": [
+              42,
+              9,
+              9
+            ],
+            "slices": [
+              2506,
+              537,
+              537
+            ],
+            "image_shape": [
+              3,
+              1024,
+              1024
+            ],
+            "mask_shape": [
+              1024,
+              1024
+            ],
+            "box_shape": [
+              4
+            ],
+            "batches": [
+              1253,
+              269,
+              269
+            ],
+            "ablation_mode": "lora_r4",
+            "lora_enabled": true,
+            "lora_layers": 80,
+            "rank": 4,
+            "residual_multiplier": 1,
+            "trainable_parameters": 673792,
+            "total_parameters": 94409264,
+            "batch_image_shape": [
+              1,
+              3,
+              1024,
+              1024
+            ],
+            "batch_mask_shape": [
+              1,
+              1024,
+              1024
+            ],
+            "batch_box_shape": [
+              1,
+              4
+            ],
+            "logits_shape": [
+              1,
+              1024,
+              1024
+            ]
+          },
+          "nonbinary_mask_volumes": 25,
+          "prompt_protocol": "ground-truth-derived boxes; zero box for empty masks"
+        },
+        "reported_checkpoint_sha256": "fef10131c00ee63b5bb2e82d7c803655923c42e5c07b8080512a2658fcfb0f48",
+        "report_sha256": "054c4ce91a39465a609008ce84d351c171a3685e250282ffa6ca1feee970137e",
+        "configured_checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r4/a100_run001/checkpoints/best_lora_wmh.pth",
+        "configured_checkpoint_sha256": "fef10131c00ee63b5bb2e82d7c803655923c42e5c07b8080512a2658fcfb0f48",
+        "checkpoint_association": "report SHA256 matched",
+        "split_record_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r4/a100_run001/configs/split_sha256.json"
+      },
+      {
+        "model": "lora_r8",
+        "protocol": "F144_raw_target_batch_mean",
+        "dice": 0.8767960583410298,
+        "report_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/evaluation/run_summary.json",
+        "report_metadata": {
+          "run_mode": "train_fresh",
+          "evaluation_checkpoint": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/checkpoints/best_lora_wmh.pth",
+          "ablation_mode": "lora_r8",
+          "lora_enabled": true,
+          "lora_rank": 8,
+          "parameter_updates_enabled": true,
+          "evaluation_checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+          "checkpoint_epoch": 12,
+          "checkpoint_validation_dice": 0.8881324583380639,
+          "overall_measured": [
+            {
+              "protocol": "F144_raw_target_batch_mean",
+              "batches": 269,
+              "dice": 0.8767960583410298,
+              "iou": 0.8156391725941219,
+              "sensitivity": 0.8809469614219488,
+              "precision": 0.9252288374205061
+            },
+            {
+              "protocol": "F146_raw_target_robust_batch_mean",
+              "batches": 269,
+              "dice": 0.876796056878066,
+              "iou": 0.8156391708240045,
+              "sensitivity": 0.880946957886186,
+              "precision": 0.9252288333041595
+            }
+          ],
+          "sitewise_measured": [
+            {
+              "site": "Singapore",
+              "samples": 144,
+              "dice": 0.8445594982605205,
+              "iou": 0.7775851300615972,
+              "sensitivity": 0.8231127983134879,
+              "precision": 0.9231306583065645
+            },
+            {
+              "site": "Amsterdam",
+              "samples": 249,
+              "dice": 0.923397463683754,
+              "iou": 0.8821267895344003,
+              "sensitivity": 0.9381605207732511,
+              "precision": 0.9190432181120928
+            },
+            {
+              "site": "Utrecht",
+              "samples": 144,
+              "dice": 0.8406231102735072,
+              "iou": 0.7598669613882668,
+              "sensitivity": 0.8747186038012715,
+              "precision": 0.8353963789189657
+            }
+          ],
+          "historical_reference_comparison": [
+            {
+              "protocol": "F144_raw_target_batch_mean",
+              "metric": "dice",
+              "measured": 0.8767960583410298,
+              "historical_reference": 0.870626557933742,
+              "difference": 0.006169500407287809
+            },
+            {
+              "protocol": "F144_raw_target_batch_mean",
+              "metric": "iou",
+              "measured": 0.8156391725941219,
+              "historical_reference": 0.8106592358179591,
+              "difference": 0.004979936776162819
+            },
+            {
+              "protocol": "F144_raw_target_batch_mean",
+              "metric": "sensitivity",
+              "measured": 0.8809469614219488,
+              "historical_reference": 0.8844656097536089,
+              "difference": -0.003518648331660046
+            },
+            {
+              "protocol": "F144_raw_target_batch_mean",
+              "metric": "precision",
+              "measured": 0.9252288374205061,
+              "historical_reference": 0.9143334380091345,
+              "difference": 0.010895399411371631
+            },
+            {
+              "protocol": "F146_raw_target_robust_batch_mean",
+              "metric": "dice",
+              "measured": 0.876796056878066,
+              "historical_reference": 0.870626554684659,
+              "difference": 0.0061695021934070615
+            },
+            {
+              "protocol": "F146_raw_target_robust_batch_mean",
+              "metric": "iou",
+              "measured": 0.8156391708240045,
+              "historical_reference": 0.8106592314171444,
+              "difference": 0.0049799394068601455
+            },
+            {
+              "protocol": "F146_raw_target_robust_batch_mean",
+              "metric": "sensitivity",
+              "measured": 0.880946957886186,
+              "historical_reference": 0.8844656075979261,
+              "difference": -0.003518649711740096
+            },
+            {
+              "protocol": "F146_raw_target_robust_batch_mean",
+              "metric": "precision",
+              "measured": 0.9252288333041595,
+              "historical_reference": 0.914333437139753,
+              "difference": 0.01089539616440649
+            }
+          ],
+          "verification": {
+            "patients": [
+              42,
+              9,
+              9
+            ],
+            "slices": [
+              2506,
+              537,
+              537
+            ],
+            "image_shape": [
+              3,
+              1024,
+              1024
+            ],
+            "mask_shape": [
+              1024,
+              1024
+            ],
+            "box_shape": [
+              4
+            ],
+            "batches": [
+              1253,
+              269,
+              269
+            ],
+            "ablation_mode": "lora_r8",
+            "lora_enabled": true,
+            "lora_layers": 80,
+            "rank": 8,
+            "residual_multiplier": 1,
+            "trainable_parameters": 1347584,
+            "total_parameters": 95083056,
+            "batch_image_shape": [
+              1,
+              3,
+              1024,
+              1024
+            ],
+            "batch_mask_shape": [
+              1,
+              1024,
+              1024
+            ],
+            "batch_box_shape": [
+              1,
+              4
+            ],
+            "logits_shape": [
+              1,
+              1024,
+              1024
+            ]
+          },
+          "nonbinary_mask_volumes": 25,
+          "prompt_protocol": "ground-truth-derived boxes; zero box for empty masks"
+        },
+        "reported_checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+        "report_sha256": "df62350fd5e4a8880dbad5ca29171f74e04230fe1c96dc3c05bdf7037116fd51",
+        "configured_checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/checkpoints/best_lora_wmh.pth",
+        "configured_checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+        "checkpoint_association": "report SHA256 matched",
+        "split_record_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/configs/split_sha256.json"
+      }
+    ],
+    "tie_break": "rank 4 only on an exact recorded-score tie",
+    "selection_scope": "post hoc display choice using existing test results"
+  },
+  "case_selection": {
+    "categories": [
+      "Small lesion",
+      "Multi-lesion",
+      "Difficult"
+    ],
+    "cases": [
+      {
+        "category": "Small lesion",
+        "site": "Amsterdam",
+        "patient_id": "112",
+        "slice_id": 41,
+        "lesion_pixels_native": 1,
+        "components_8connected": 1,
+        "largest_component_pixels": 1,
+        "burden_percentile": 0.008620689655172414,
+        "fragmentation_percentile": 0.07974137931034483,
+        "morphology_difficulty": 0.07112068965517242,
+        "median_distance": 0.9116379310344827,
+        "selection_method": "GT-only deterministic",
+        "selection_reason": "Minimum positive native-mask area",
+        "displayed_lora_model": "lora_r8",
+        "displayed_lora_rank": 8,
+        "unet_dice": 5.847953212954413e-10,
+        "medsam_lora_dice": 0.7826086959672338,
+        "supplementary_cases_csv": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/final_supplementary_v1/selected_cases.csv"
+      },
+      {
+        "category": "Multi-lesion",
+        "site": "Utrecht",
+        "patient_id": "49",
+        "slice_id": 26,
+        "lesion_pixels_native": 1002,
+        "components_8connected": 34,
+        "largest_component_pixels": 261,
+        "burden_percentile": 0.9698275862068966,
+        "fragmentation_percentile": 1.0,
+        "morphology_difficulty": 0.030172413793103425,
+        "median_distance": 0.9698275862068966,
+        "selection_method": "GT-only deterministic",
+        "selection_reason": "Maximum 8-connected component count",
+        "displayed_lora_model": "lora_r8",
+        "displayed_lora_rank": 8,
+        "unet_dice": 0.7781283437137422,
+        "medsam_lora_dice": 0.7844777929368365,
+        "supplementary_cases_csv": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/final_supplementary_v1/selected_cases.csv"
+      },
+      {
+        "category": "Difficult",
+        "site": "Amsterdam",
+        "patient_id": "137",
+        "slice_id": 53,
+        "lesion_pixels_native": 62,
+        "components_8connected": 13,
+        "largest_component_pixels": 14,
+        "burden_percentile": 0.41379310344827586,
+        "fragmentation_percentile": 0.8038793103448276,
+        "morphology_difficulty": 0.39008620689655177,
+        "median_distance": 0.39008620689655177,
+        "selection_method": "GT-only deterministic",
+        "selection_reason": "High fragmentation / low burden proxy",
+        "displayed_lora_model": "lora_r8",
+        "displayed_lora_rank": 8,
+        "unet_dice": 0.6838966202846144,
+        "medsam_lora_dice": 0.7479530869717205,
+        "supplementary_cases_csv": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/final_supplementary_v1/selected_cases.csv"
+      }
+    ],
+    "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/final_supplementary_v1/selected_cases.csv",
+    "source_sha256": "28f55a8f2ccd20bf7eba10530ebbaa48837399a23e0a13240fee6e8c00d959a6",
+    "site_coverage": [
+      "Amsterdam",
+      "Utrecht"
+    ],
+    "rule": "exact category subset of existing validated supplementary cases; no performance-based substitution"
+  },
+  "main_prediction_audit": [
+    {
+      "category": "Small lesion",
+      "site": "Amsterdam",
+      "patient_id": "112",
+      "slice_id": 41,
+      "model": "unet",
+      "source_type": "new_inference",
+      "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/unet_Amsterdam_112_041.npz",
+      "source_sha256": "fbbe0ed9d363fa6537e751f23ea234043764bff7ea9c9bfaa682b516a1a1e787",
+      "kind": "logits",
+      "manifest": "",
+      "checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/unet_baseline/checkpoints/best_unet_wmh.pth",
+      "checkpoint_sha256": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+      "provenance_status": "strict checkpoint load; inputs hashed",
+      "configured_checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/unet_baseline/checkpoints/best_unet_wmh.pth",
+      "configured_checkpoint_sha256": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+      "prediction_checkpoint_match": "verified by recorded SHA256",
+      "image_sha256": "3b0aeb8d97b379ac743faef73d898c47eda2f00810e3c5f4b900e14b88da2d86",
+      "mask_sha256": "185df9698f461de1a4b0623436300e1eb3432a2e72b19942e9b88b767e45541a",
+      "target_sha256": "b56d28c63b987bc852241c17264ee021038166a55bec9407f8fac6ee95dd8ea1"
+    },
+    {
+      "category": "Small lesion",
+      "site": "Amsterdam",
+      "patient_id": "112",
+      "slice_id": 41,
+      "model": "lora_r8",
+      "source_type": "new_inference",
+      "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/lora_r8_Amsterdam_112_041.npz",
+      "source_sha256": "4970f767766c261d2dcc8eeb720bc741d55c323b2ef32447068dfb9f00a60507",
+      "kind": "logits",
+      "manifest": "",
+      "checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/checkpoints/best_lora_wmh.pth",
+      "checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+      "provenance_status": "strict checkpoint load; inputs hashed",
+      "configured_checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/checkpoints/best_lora_wmh.pth",
+      "configured_checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+      "prediction_checkpoint_match": "verified by recorded SHA256",
+      "image_sha256": "3b0aeb8d97b379ac743faef73d898c47eda2f00810e3c5f4b900e14b88da2d86",
+      "mask_sha256": "185df9698f461de1a4b0623436300e1eb3432a2e72b19942e9b88b767e45541a",
+      "target_sha256": "b56d28c63b987bc852241c17264ee021038166a55bec9407f8fac6ee95dd8ea1"
+    },
+    {
+      "category": "Multi-lesion",
+      "site": "Utrecht",
+      "patient_id": "49",
+      "slice_id": 26,
+      "model": "unet",
+      "source_type": "new_inference",
+      "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/unet_Utrecht_49_026.npz",
+      "source_sha256": "4e76e704d30316e99bef51b6210e8dfd7740e0975d817d0f326b8a02708d43fd",
+      "kind": "logits",
+      "manifest": "",
+      "checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/unet_baseline/checkpoints/best_unet_wmh.pth",
+      "checkpoint_sha256": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+      "provenance_status": "strict checkpoint load; inputs hashed",
+      "configured_checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/unet_baseline/checkpoints/best_unet_wmh.pth",
+      "configured_checkpoint_sha256": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+      "prediction_checkpoint_match": "verified by recorded SHA256",
+      "image_sha256": "c08fc9b92318ae080716677b3c1d1305951f9babb09e11c7a06551cdaf56133f",
+      "mask_sha256": "e09dea64b90915f4eb631193af8ed68756899b9fa01e87a5737148e628b58fa1",
+      "target_sha256": "ef73cae8cd068923ec92723b5ee632e605b239ac3aafce2062595b33052daeeb"
+    },
+    {
+      "category": "Multi-lesion",
+      "site": "Utrecht",
+      "patient_id": "49",
+      "slice_id": 26,
+      "model": "lora_r8",
+      "source_type": "new_inference",
+      "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/lora_r8_Utrecht_49_026.npz",
+      "source_sha256": "a442b3e2fb10e8a02fd41b8269184b92920aa2f13f26390441384514a6189201",
+      "kind": "logits",
+      "manifest": "",
+      "checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/checkpoints/best_lora_wmh.pth",
+      "checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+      "provenance_status": "strict checkpoint load; inputs hashed",
+      "configured_checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/checkpoints/best_lora_wmh.pth",
+      "configured_checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+      "prediction_checkpoint_match": "verified by recorded SHA256",
+      "image_sha256": "c08fc9b92318ae080716677b3c1d1305951f9babb09e11c7a06551cdaf56133f",
+      "mask_sha256": "e09dea64b90915f4eb631193af8ed68756899b9fa01e87a5737148e628b58fa1",
+      "target_sha256": "ef73cae8cd068923ec92723b5ee632e605b239ac3aafce2062595b33052daeeb"
+    },
+    {
+      "category": "Difficult",
+      "site": "Amsterdam",
+      "patient_id": "137",
+      "slice_id": 53,
+      "model": "unet",
+      "source_type": "new_inference",
+      "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/unet_Amsterdam_137_053.npz",
+      "source_sha256": "f7849822c714cf34764584f6a2cb51a040a3c53224755edd32046ccbface0890",
+      "kind": "logits",
+      "manifest": "",
+      "checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/unet_baseline/checkpoints/best_unet_wmh.pth",
+      "checkpoint_sha256": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+      "provenance_status": "strict checkpoint load; inputs hashed",
+      "configured_checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/unet_baseline/checkpoints/best_unet_wmh.pth",
+      "configured_checkpoint_sha256": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+      "prediction_checkpoint_match": "verified by recorded SHA256",
+      "image_sha256": "d29060478c97ba9d2983f6d1f1ac63ea46dba9c48020d7180dc359adb334ff87",
+      "mask_sha256": "7f2457bc4b16ccc6dec88c527971cf8d35664b37c272c2b48b4b9b6f8ed76bdd",
+      "target_sha256": "9e4d70e5a5d3aa81d30bfc0a881430571ede5032eb9eb0d98af104d1ddd197aa"
+    },
+    {
+      "category": "Difficult",
+      "site": "Amsterdam",
+      "patient_id": "137",
+      "slice_id": 53,
+      "model": "lora_r8",
+      "source_type": "new_inference",
+      "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/lora_r8_Amsterdam_137_053.npz",
+      "source_sha256": "89369bc7399843e7d9da1ffe7ed9e04f94d42a614d252d0b592f7929994a19ca",
+      "kind": "logits",
+      "manifest": "",
+      "checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/checkpoints/best_lora_wmh.pth",
+      "checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+      "provenance_status": "strict checkpoint load; inputs hashed",
+      "configured_checkpoint_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/checkpoints/best_lora_wmh.pth",
+      "configured_checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+      "prediction_checkpoint_match": "verified by recorded SHA256",
+      "image_sha256": "d29060478c97ba9d2983f6d1f1ac63ea46dba9c48020d7180dc359adb334ff87",
+      "mask_sha256": "7f2457bc4b16ccc6dec88c527971cf8d35664b37c272c2b48b4b9b6f8ed76bdd",
+      "target_sha256": "9e4d70e5a5d3aa81d30bfc0a881430571ede5032eb9eb0d98af104d1ddd197aa"
+    }
+  ],
+  "visualization": {
+    "dpi": 600,
+    "ground_truth_color": [
+      0.0,
+      1.0,
+      0.3
+    ],
+    "prediction_color": [
+      1.0,
+      0.55,
+      0.0
+    ],
+    "overlay_alpha": 0.48,
+    "shared_insets": true,
+    "inset_min_size": 20,
+    "inset_padding": 5,
+    "metric_annotation": "Dice on prediction panels only"
+  },
+  "caption": "Qualitative WMH segmentation for three existing supplementary cases. Columns: input FLAIR, ground truth, U-Net, MedSAM-LoRA rank 8. Green overlays indicate GT; orange overlays indicate predictions, with white GT contours in prediction panels. Per-panel Dice is the unchanged full-slice 1024x1024 binary metric, never a crop score. Existing GT-derived zoom regions and display orientation are applied identically to all four panels. Small lesion, Multi-lesion and Difficult are existing supplementary labels; they are not selected by model performance. The displayed LoRA rank is selected from already recorded overall test Dice under F144_raw_target_batch_mean, not from these case scores. This post hoc display choice is not an independent test-set model-selection result. MedSAM uses GT-derived box prompts, whereas U-Net is image-only. Frozen MedSAM comparisons remain in the supplementary figure and quantitative analysis. No superiority on every case or clinical severity interpretation is implied. Some reused predictions lack original checkpoint/input fingerprints; see provenance_status before publication.",
+  "input_files_sha256": {
+    "/content/drive/MyDrive/WMH_MedSAM_Project/configs/Copy of original_test.csv": "ffad3f17dad8f3c3eb2c719d8452373fe5f550aec6f1079d28e9283741f94541",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/60/pre/FLAIR.nii": "3094508a38a7cdb33be24101ca6f6b7e04be9c82c59a5e383e218f628da44fa1",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/60/wmh.nii": "7f6abd2b54fe37a5b3c152bc0f77be86957464a3a16e546d2f7d6fe9e853a28b",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/112/pre/FLAIR.nii": "3b0aeb8d97b379ac743faef73d898c47eda2f00810e3c5f4b900e14b88da2d86",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/112/wmh.nii": "185df9698f461de1a4b0623436300e1eb3432a2e72b19942e9b88b767e45541a",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/49/pre/FLAIR.nii": "c08fc9b92318ae080716677b3c1d1305951f9babb09e11c7a06551cdaf56133f",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/49/wmh.nii": "e09dea64b90915f4eb631193af8ed68756899b9fa01e87a5737148e628b58fa1",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/23/pre/FLAIR.nii": "2222f70f21601c8f72631302f6c9c2292d98678345ef3206544594bf5f3d9ff9",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/23/wmh.nii": "8b9536c4a0c1c6667fe48c44ceb9fa254e8d66a43f47ba3d1592093560337722",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/137/pre/FLAIR.nii": "d29060478c97ba9d2983f6d1f1ac63ea46dba9c48020d7180dc359adb334ff87",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/137/wmh.nii": "7f2457bc4b16ccc6dec88c527971cf8d35664b37c272c2b48b4b9b6f8ed76bdd",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/66/pre/FLAIR.nii": "6e2ba5ff07ad562ca16e2a3e6780e8ff4b5e379e9eda0d00c8a2db5d7bed1354",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/66/wmh.nii": "f1a26f8c61895bb70056e85838a360edbb60c508edebdbd77081f4a742ee36ea",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/65/pre/FLAIR.nii": "582a8bcae6559ed0b20b56fba7987eb84d69e75abf4780bc56408faf459b85a5",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/65/wmh.nii": "6aea94bc3212d44d633de535c4029e262d7fc077ff40b8f4e7061ff6c0087da2",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/21/pre/FLAIR.nii": "86304c8dda8f2836d0187580e23eebf5db1bbf58c08888a176c6b44602079210",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/21/wmh.nii": "5185b77500f9fce5b63530140ed2cd98196df549931bab2f356db05fdec3c795",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/116/pre/FLAIR.nii": "c44b42f24a5d83d27379f2432a673d4ab78c7eb1e74488c4ef22811a298b966e",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/116/wmh.nii": "55de32c5d3f4905b24a1652b88dc1b95a2955b2e1fe91a5f13e3ed7da31d2958",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r4/a100_run001/checkpoints/best_lora_wmh.pth": "fef10131c00ee63b5bb2e82d7c803655923c42e5c07b8080512a2658fcfb0f48",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r4/a100_run001/evaluation/run_summary.json": "054c4ce91a39465a609008ce84d351c171a3685e250282ffa6ca1feee970137e",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r4/a100_run001/configs/split_sha256.json": "eaaecf208110dde286622bca349ef2b29a94ee268ae7d20b9ef7bd5bf1fbf64e",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/checkpoints/best_lora_wmh.pth": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/evaluation/run_summary.json": "df62350fd5e4a8880dbad5ca29171f74e04230fe1c96dc3c05bdf7037116fd51",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/configs/split_sha256.json": "eaaecf208110dde286622bca349ef2b29a94ee268ae7d20b9ef7bd5bf1fbf64e",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/final_supplementary_v1/selected_cases.csv": "28f55a8f2ccd20bf7eba10530ebbaa48837399a23e0a13240fee6e8c00d959a6",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/configs/medsam_cache_index.csv": "5e81e1ab084e020919a70f5d3bc566697ff4536e181e3d64db7239298d637278",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0089_Amsterdam_112_041.npz": "35b676540ada05ae75f70e885cf13b8a415b230ea347a2205f14b4fa1c452e62",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0157_Utrecht_49_026.npz": "d6dc439c1096370cde52ec2995ac4c5a706bcedfc900df37dcf32736532a16ec",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0280_Amsterdam_137_053.npz": "a34a8bd1190176c155d25d163f364fc7faa5af9a363f34cee48b7b26c4240d33",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0373_Singapore_65_015.npz": "9805a236c2ec1db1b3dc4a8c44d036ca785ef854ad3ffd30d89b9df9609cbf87",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0423_Utrecht_21_017.npz": "2e1386dc90a651d7a2a1bba7e767724c5e91158eacb48bd99624f3859f92cbcb",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/unet_baseline/checkpoints/best_unet_wmh.pth": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+    "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/frozen/a100_frozen_run004/checkpoints/best_lora_wmh.pth": "704c757e7243ba5568cd678021a8d6cd14320422a7c7468d76381bf97310888c",
+    "/content/MedSAM/segment_anything/__init__.py": "1c22ab77db285b05b7e0a60cd417459182613ea5c746dffec6993a5f86cdbcf1",
+    "/content/MedSAM/segment_anything/automatic_mask_generator.py": "77842dcb57c68e6eeaeed8a73c5fd079cd20967c2176daf1f115d5be2b2416d9",
+    "/content/MedSAM/segment_anything/build_sam.py": "f8d09bf0233f3635f1a4d52c049390d8c115a501461f839631757616eda70519",
+    "/content/MedSAM/segment_anything/modeling/__init__.py": "7bd468bf97fea2758bcdf18977dc8e60d6f90d1d02f5413a2870740005ecfbe8",
+    "/content/MedSAM/segment_anything/modeling/common.py": "77581b8217e25c9ace51f7356fccd1a07ed2962d0f74aae2491f1001750565f1",
+    "/content/MedSAM/segment_anything/modeling/image_encoder.py": "afd56922b0c2903f0ddcc75ea2819b42c534c6a830082794f8b93028a2d0c19c",
+    "/content/MedSAM/segment_anything/modeling/mask_decoder.py": "270dea7cb1103e7ad04932b7c45e5b0d5ba0db0a8a13734a55bbce0e002fadf7",
+    "/content/MedSAM/segment_anything/modeling/prompt_encoder.py": "6961f2b6b336501ecaed497b5642e2626d60a81e6b861455822678df256f3664",
+    "/content/MedSAM/segment_anything/modeling/sam.py": "4a5eb2d47f10e2762c29eed6212c190a54709edc3ce01c1f136bce6d901473a6",
+    "/content/MedSAM/segment_anything/modeling/transformer.py": "9bd360481a8f693e0b4054a229b5a5bb60efc38bb92e004de138009eba98cd94",
+    "/content/MedSAM/segment_anything/predictor.py": "f4125a596a7871043c3f29217b9ff69dfc779490beec2f743d71d8ffe8c51a40",
+    "/content/MedSAM/segment_anything/utils/__init__.py": "5f0b78fc8a07e575fded364917a215ebb440df00d90c789d9a3d801fee6f1223",
+    "/content/MedSAM/segment_anything/utils/amg.py": "a308a3908bdab30515e0f68f4f3ff7dfd00a35055106b4e83635dc0c5df2ef11",
+    "/content/MedSAM/segment_anything/utils/onnx.py": "1e89e913b79660ac1c8870c8d494adc23ee9f591e90c14d53ec6587e6ce18ade",
+    "/content/MedSAM/segment_anything/utils/transforms.py": "6351ec01f61abfb69a529bb7de105f86a52d519e5d25c004c96b0e483b9791af",
+    "/content/drive/MyDrive/WMH-MedSAM-LoRA/notebooks/WMH_Benchmark_U-Net_vs_MedSAM.ipynb": "16e99df1f41e149b38d7ff574daa26723ffd9a63c73d4206a500e9724497b44c"
+  },
+  "pipeline_provenance_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/figure_provenance.json",
+  "pipeline_provenance_sha256": "0d9b16d73352a8967ae6de16e725b04c7b2c63f9a081235706ed69e8f6121949",
+  "pipeline_provenance": {
+    "training_performed": false,
+    "input_files_sha256": {
+      "/content/drive/MyDrive/WMH_MedSAM_Project/configs/Copy of original_test.csv": "ffad3f17dad8f3c3eb2c719d8452373fe5f550aec6f1079d28e9283741f94541",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/60/pre/FLAIR.nii": "3094508a38a7cdb33be24101ca6f6b7e04be9c82c59a5e383e218f628da44fa1",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/60/wmh.nii": "7f6abd2b54fe37a5b3c152bc0f77be86957464a3a16e546d2f7d6fe9e853a28b",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/112/pre/FLAIR.nii": "3b0aeb8d97b379ac743faef73d898c47eda2f00810e3c5f4b900e14b88da2d86",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/112/wmh.nii": "185df9698f461de1a4b0623436300e1eb3432a2e72b19942e9b88b767e45541a",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/49/pre/FLAIR.nii": "c08fc9b92318ae080716677b3c1d1305951f9babb09e11c7a06551cdaf56133f",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/49/wmh.nii": "e09dea64b90915f4eb631193af8ed68756899b9fa01e87a5737148e628b58fa1",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/23/pre/FLAIR.nii": "2222f70f21601c8f72631302f6c9c2292d98678345ef3206544594bf5f3d9ff9",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/23/wmh.nii": "8b9536c4a0c1c6667fe48c44ceb9fa254e8d66a43f47ba3d1592093560337722",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/137/pre/FLAIR.nii": "d29060478c97ba9d2983f6d1f1ac63ea46dba9c48020d7180dc359adb334ff87",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/137/wmh.nii": "7f2457bc4b16ccc6dec88c527971cf8d35664b37c272c2b48b4b9b6f8ed76bdd",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/66/pre/FLAIR.nii": "6e2ba5ff07ad562ca16e2a3e6780e8ff4b5e379e9eda0d00c8a2db5d7bed1354",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/66/wmh.nii": "f1a26f8c61895bb70056e85838a360edbb60c508edebdbd77081f4a742ee36ea",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/65/pre/FLAIR.nii": "582a8bcae6559ed0b20b56fba7987eb84d69e75abf4780bc56408faf459b85a5",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Singapore/65/wmh.nii": "6aea94bc3212d44d633de535c4029e262d7fc077ff40b8f4e7061ff6c0087da2",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/21/pre/FLAIR.nii": "86304c8dda8f2836d0187580e23eebf5db1bbf58c08888a176c6b44602079210",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Utrecht/21/wmh.nii": "5185b77500f9fce5b63530140ed2cd98196df549931bab2f356db05fdec3c795",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/116/pre/FLAIR.nii": "c44b42f24a5d83d27379f2432a673d4ab78c7eb1e74488c4ef22811a298b966e",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/data/wmh_dataset/wmh_data/training/Amsterdam/GE3T/116/wmh.nii": "55de32c5d3f4905b24a1652b88dc1b95a2955b2e1fe91a5f13e3ed7da31d2958",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r4/a100_run001/checkpoints/best_lora_wmh.pth": "fef10131c00ee63b5bb2e82d7c803655923c42e5c07b8080512a2658fcfb0f48",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r4/a100_run001/evaluation/run_summary.json": "054c4ce91a39465a609008ce84d351c171a3685e250282ffa6ca1feee970137e",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r4/a100_run001/configs/split_sha256.json": "eaaecf208110dde286622bca349ef2b29a94ee268ae7d20b9ef7bd5bf1fbf64e",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/checkpoints/best_lora_wmh.pth": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/evaluation/run_summary.json": "df62350fd5e4a8880dbad5ca29171f74e04230fe1c96dc3c05bdf7037116fd51",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/lora_r8/a100_r8_run002/configs/split_sha256.json": "eaaecf208110dde286622bca349ef2b29a94ee268ae7d20b9ef7bd5bf1fbf64e",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/final_supplementary_v1/selected_cases.csv": "28f55a8f2ccd20bf7eba10530ebbaa48837399a23e0a13240fee6e8c00d959a6",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/configs/medsam_cache_index.csv": "5e81e1ab084e020919a70f5d3bc566697ff4536e181e3d64db7239298d637278",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0089_Amsterdam_112_041.npz": "35b676540ada05ae75f70e885cf13b8a415b230ea347a2205f14b4fa1c452e62",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0157_Utrecht_49_026.npz": "d6dc439c1096370cde52ec2995ac4c5a706bcedfc900df37dcf32736532a16ec",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0280_Amsterdam_137_053.npz": "a34a8bd1190176c155d25d163f364fc7faa5af9a363f34cee48b7b26c4240d33",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0373_Singapore_65_015.npz": "9805a236c2ec1db1b3dc4a8c44d036ca785ef854ad3ffd30d89b9df9609cbf87",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0423_Utrecht_21_017.npz": "2e1386dc90a651d7a2a1bba7e767724c5e91158eacb48bd99624f3859f92cbcb",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/unet_baseline/checkpoints/best_unet_wmh.pth": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+      "/content/drive/MyDrive/WMH_MedSAM_Project/results/ablation/frozen/a100_frozen_run004/checkpoints/best_lora_wmh.pth": "704c757e7243ba5568cd678021a8d6cd14320422a7c7468d76381bf97310888c",
+      "/content/MedSAM/segment_anything/__init__.py": "1c22ab77db285b05b7e0a60cd417459182613ea5c746dffec6993a5f86cdbcf1",
+      "/content/MedSAM/segment_anything/automatic_mask_generator.py": "77842dcb57c68e6eeaeed8a73c5fd079cd20967c2176daf1f115d5be2b2416d9",
+      "/content/MedSAM/segment_anything/build_sam.py": "f8d09bf0233f3635f1a4d52c049390d8c115a501461f839631757616eda70519",
+      "/content/MedSAM/segment_anything/modeling/__init__.py": "7bd468bf97fea2758bcdf18977dc8e60d6f90d1d02f5413a2870740005ecfbe8",
+      "/content/MedSAM/segment_anything/modeling/common.py": "77581b8217e25c9ace51f7356fccd1a07ed2962d0f74aae2491f1001750565f1",
+      "/content/MedSAM/segment_anything/modeling/image_encoder.py": "afd56922b0c2903f0ddcc75ea2819b42c534c6a830082794f8b93028a2d0c19c",
+      "/content/MedSAM/segment_anything/modeling/mask_decoder.py": "270dea7cb1103e7ad04932b7c45e5b0d5ba0db0a8a13734a55bbce0e002fadf7",
+      "/content/MedSAM/segment_anything/modeling/prompt_encoder.py": "6961f2b6b336501ecaed497b5642e2626d60a81e6b861455822678df256f3664",
+      "/content/MedSAM/segment_anything/modeling/sam.py": "4a5eb2d47f10e2762c29eed6212c190a54709edc3ce01c1f136bce6d901473a6",
+      "/content/MedSAM/segment_anything/modeling/transformer.py": "9bd360481a8f693e0b4054a229b5a5bb60efc38bb92e004de138009eba98cd94",
+      "/content/MedSAM/segment_anything/predictor.py": "f4125a596a7871043c3f29217b9ff69dfc779490beec2f743d71d8ffe8c51a40",
+      "/content/MedSAM/segment_anything/utils/__init__.py": "5f0b78fc8a07e575fded364917a215ebb440df00d90c789d9a3d801fee6f1223",
+      "/content/MedSAM/segment_anything/utils/amg.py": "a308a3908bdab30515e0f68f4f3ff7dfd00a35055106b4e83635dc0c5df2ef11",
+      "/content/MedSAM/segment_anything/utils/onnx.py": "1e89e913b79660ac1c8870c8d494adc23ee9f591e90c14d53ec6587e6ce18ade",
+      "/content/MedSAM/segment_anything/utils/transforms.py": "6351ec01f61abfb69a529bb7de105f86a52d519e5d25c004c96b0e483b9791af",
+      "/content/drive/MyDrive/WMH-MedSAM-LoRA/notebooks/WMH_Benchmark_U-Net_vs_MedSAM.ipynb": "16e99df1f41e149b38d7ff574daa26723ffd9a63c73d4206a500e9724497b44c"
+    },
+    "architecture": {
+      "medsam_source": {
+        "segment_anything/__init__.py": "1c22ab77db285b05b7e0a60cd417459182613ea5c746dffec6993a5f86cdbcf1",
+        "segment_anything/automatic_mask_generator.py": "77842dcb57c68e6eeaeed8a73c5fd079cd20967c2176daf1f115d5be2b2416d9",
+        "segment_anything/build_sam.py": "f8d09bf0233f3635f1a4d52c049390d8c115a501461f839631757616eda70519",
+        "segment_anything/modeling/__init__.py": "7bd468bf97fea2758bcdf18977dc8e60d6f90d1d02f5413a2870740005ecfbe8",
+        "segment_anything/modeling/common.py": "77581b8217e25c9ace51f7356fccd1a07ed2962d0f74aae2491f1001750565f1",
+        "segment_anything/modeling/image_encoder.py": "afd56922b0c2903f0ddcc75ea2819b42c534c6a830082794f8b93028a2d0c19c",
+        "segment_anything/modeling/mask_decoder.py": "270dea7cb1103e7ad04932b7c45e5b0d5ba0db0a8a13734a55bbce0e002fadf7",
+        "segment_anything/modeling/prompt_encoder.py": "6961f2b6b336501ecaed497b5642e2626d60a81e6b861455822678df256f3664",
+        "segment_anything/modeling/sam.py": "4a5eb2d47f10e2762c29eed6212c190a54709edc3ce01c1f136bce6d901473a6",
+        "segment_anything/modeling/transformer.py": "9bd360481a8f693e0b4054a229b5a5bb60efc38bb92e004de138009eba98cd94",
+        "segment_anything/predictor.py": "f4125a596a7871043c3f29217b9ff69dfc779490beec2f743d71d8ffe8c51a40",
+        "segment_anything/utils/__init__.py": "5f0b78fc8a07e575fded364917a215ebb440df00d90c789d9a3d801fee6f1223",
+        "segment_anything/utils/amg.py": "a308a3908bdab30515e0f68f4f3ff7dfd00a35055106b4e83635dc0c5df2ef11",
+        "segment_anything/utils/onnx.py": "1e89e913b79660ac1c8870c8d494adc23ee9f591e90c14d53ec6587e6ce18ade",
+        "segment_anything/utils/transforms.py": "6351ec01f61abfb69a529bb7de105f86a52d519e5d25c004c96b0e483b9791af"
+      },
+      "unet": {
+        "source_path": "/content/drive/MyDrive/WMH-MedSAM-LoRA/notebooks/WMH_Benchmark_U-Net_vs_MedSAM.ipynb",
+        "source_sha256": "16e99df1f41e149b38d7ff574daa26723ffd9a63c73d4206a500e9724497b44c",
+        "class_AST_sha256": "17dedc4720bc332b90720a4c189440f887f7da09cbf7cd3e0c1e9580256ed505"
+      }
+    },
+    "python": "3.13.15 (main, Aug  6 2026, 11:06:22) [GCC 13.3.0]",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.39",
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "numpy": "2.1.3",
+    "matplotlib": "3.10.0",
+    "device": "cuda",
+    "gpu": "Tesla T4",
+    "cuda_matmul_allow_tf32": false,
+    "cudnn_allow_tf32": true,
+    "test_slices": 537,
+    "selected_cases": 5,
+    "selected_predictions": 20,
+    "selection": "GT-only deterministic morphology",
+    "case_metrics": "binary target>0; per-slice epsilon=1e-7; no batch aggregation",
+    "prediction_provenance": [
+      {
+        "category": "Easy",
+        "site": "Singapore",
+        "patient_id": "65",
+        "slice_id": 15,
+        "model": "unet",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/unet_Singapore_65_015.npz",
+        "checkpoint_sha256": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Easy",
+        "site": "Singapore",
+        "patient_id": "65",
+        "slice_id": 15,
+        "model": "frozen",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/frozen_Singapore_65_015.npz",
+        "checkpoint_sha256": "704c757e7243ba5568cd678021a8d6cd14320422a7c7468d76381bf97310888c",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Easy",
+        "site": "Singapore",
+        "patient_id": "65",
+        "slice_id": 15,
+        "model": "lora_r4",
+        "source_type": "saved_prediction",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0373_Singapore_65_015.npz",
+        "checkpoint_sha256": "",
+        "provenance_status": "legacy provenance unverified"
+      },
+      {
+        "category": "Easy",
+        "site": "Singapore",
+        "patient_id": "65",
+        "slice_id": 15,
+        "model": "lora_r8",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/lora_r8_Singapore_65_015.npz",
+        "checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Medium",
+        "site": "Utrecht",
+        "patient_id": "21",
+        "slice_id": 17,
+        "model": "unet",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/unet_Utrecht_21_017.npz",
+        "checkpoint_sha256": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Medium",
+        "site": "Utrecht",
+        "patient_id": "21",
+        "slice_id": 17,
+        "model": "frozen",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/frozen_Utrecht_21_017.npz",
+        "checkpoint_sha256": "704c757e7243ba5568cd678021a8d6cd14320422a7c7468d76381bf97310888c",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Medium",
+        "site": "Utrecht",
+        "patient_id": "21",
+        "slice_id": 17,
+        "model": "lora_r4",
+        "source_type": "saved_prediction",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0423_Utrecht_21_017.npz",
+        "checkpoint_sha256": "",
+        "provenance_status": "legacy provenance unverified"
+      },
+      {
+        "category": "Medium",
+        "site": "Utrecht",
+        "patient_id": "21",
+        "slice_id": 17,
+        "model": "lora_r8",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/lora_r8_Utrecht_21_017.npz",
+        "checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Difficult",
+        "site": "Amsterdam",
+        "patient_id": "137",
+        "slice_id": 53,
+        "model": "unet",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/unet_Amsterdam_137_053.npz",
+        "checkpoint_sha256": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Difficult",
+        "site": "Amsterdam",
+        "patient_id": "137",
+        "slice_id": 53,
+        "model": "frozen",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/frozen_Amsterdam_137_053.npz",
+        "checkpoint_sha256": "704c757e7243ba5568cd678021a8d6cd14320422a7c7468d76381bf97310888c",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Difficult",
+        "site": "Amsterdam",
+        "patient_id": "137",
+        "slice_id": 53,
+        "model": "lora_r4",
+        "source_type": "saved_prediction",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0280_Amsterdam_137_053.npz",
+        "checkpoint_sha256": "",
+        "provenance_status": "legacy provenance unverified"
+      },
+      {
+        "category": "Difficult",
+        "site": "Amsterdam",
+        "patient_id": "137",
+        "slice_id": 53,
+        "model": "lora_r8",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/lora_r8_Amsterdam_137_053.npz",
+        "checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Small lesion",
+        "site": "Amsterdam",
+        "patient_id": "112",
+        "slice_id": 41,
+        "model": "unet",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/unet_Amsterdam_112_041.npz",
+        "checkpoint_sha256": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Small lesion",
+        "site": "Amsterdam",
+        "patient_id": "112",
+        "slice_id": 41,
+        "model": "frozen",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/frozen_Amsterdam_112_041.npz",
+        "checkpoint_sha256": "704c757e7243ba5568cd678021a8d6cd14320422a7c7468d76381bf97310888c",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Small lesion",
+        "site": "Amsterdam",
+        "patient_id": "112",
+        "slice_id": 41,
+        "model": "lora_r4",
+        "source_type": "saved_prediction",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0089_Amsterdam_112_041.npz",
+        "checkpoint_sha256": "",
+        "provenance_status": "legacy provenance unverified"
+      },
+      {
+        "category": "Small lesion",
+        "site": "Amsterdam",
+        "patient_id": "112",
+        "slice_id": 41,
+        "model": "lora_r8",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/lora_r8_Amsterdam_112_041.npz",
+        "checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Multi-lesion",
+        "site": "Utrecht",
+        "patient_id": "49",
+        "slice_id": 26,
+        "model": "unet",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/unet_Utrecht_49_026.npz",
+        "checkpoint_sha256": "f15b78c13d7e18d93150148a3e3c7509340feb6a67ac3f20ce824da2799c1aba",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Multi-lesion",
+        "site": "Utrecht",
+        "patient_id": "49",
+        "slice_id": 26,
+        "model": "frozen",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/frozen_Utrecht_49_026.npz",
+        "checkpoint_sha256": "704c757e7243ba5568cd678021a8d6cd14320422a7c7468d76381bf97310888c",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      },
+      {
+        "category": "Multi-lesion",
+        "site": "Utrecht",
+        "patient_id": "49",
+        "slice_id": 26,
+        "model": "lora_r4",
+        "source_type": "saved_prediction",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/benchmark_runs/unet_vs_medsam_002/logits/medsam/0157_Utrecht_49_026.npz",
+        "checkpoint_sha256": "",
+        "provenance_status": "legacy provenance unverified"
+      },
+      {
+        "category": "Multi-lesion",
+        "site": "Utrecht",
+        "patient_id": "49",
+        "slice_id": 26,
+        "model": "lora_r8",
+        "source_type": "new_inference",
+        "source_path": "/content/drive/MyDrive/WMH_MedSAM_Project/results/qualitative/main_figure_v1/pipeline_audit/selected_logits/lora_r8_Utrecht_49_026.npz",
+        "checkpoint_sha256": "4580db9dd3eb6bb0e312032c8ab6d0d2e83b29b6981658f8f88143cbb3fb46cf",
+        "provenance_status": "strict checkpoint load; inputs hashed"
+      }
+    ],
+    "figures_sha256": {
+      "main_qualitative_figure.png": "fe0552f823a15d8e4b4e74a6d418b1633a1aa37693e4a8fb5392bab5611eea85",
+      "main_qualitative_figure.pdf": "8ba21a27595db9d30d198777a35aae51abb7b820db4790ae166c0b2ed823105f"
+    }
+  },
+  "output_sha256": {
+    "main_qualitative_figure.png": "fe0552f823a15d8e4b4e74a6d418b1633a1aa37693e4a8fb5392bab5611eea85",
+    "main_qualitative_figure.pdf": "8ba21a27595db9d30d198777a35aae51abb7b820db4790ae166c0b2ed823105f",
+    "selected_cases.csv": "c2580b673c0e4ef5d8292eb7a8a0b4f3ba7123963db735c1b6366324c550243d"
+  }
+}
