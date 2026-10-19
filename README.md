@@ -43,14 +43,14 @@ Only LoRA parameters are optimized during training.
 
 # LoRA Ablation
 
-Two LoRA configurations were evaluated:
+Two LoRA configurations were evaluated (preliminary protocol):
 
 | Configuration | Validation Dice |
 |---|---:|
 | LoRA rank 4 | 0.8739 |
 | LoRA rank 8 | 0.8768 |
 
-The rank-8 configuration achieved the highest validation performance and was used for the final benchmark and qualitative analysis.
+Note: this ablation used a preliminary evaluation protocol. The final benchmark — paired protocol, 9 test patients, 537 slices (`results/benchmark/`, provenance in `benchmark_provenance.json`) — used the **LoRA rank-4** checkpoint (epoch 9, validation Dice 0.8892): test Dice **0.8777** vs U-Net **0.6683**.
 
 ---
 
@@ -147,7 +147,7 @@ Main comparison:
 - Input FLAIR
 - Ground truth
 - U-Net
-- MedSAM-LoRA (rank 8)
+- MedSAM-LoRA (rank 8 — ablation-phase figures; to be regenerated with the final rank-4 checkpoint)
 
 Additional qualitative analyses include:
 - Frozen MedSAM
@@ -157,6 +157,8 @@ Additional qualitative analyses include:
 ---
 
 # Reproducibility
+
+Final weights (verified epoch-9 LoRA checkpoint, SHA256 `fef10131c00ee63b5bb2e82d7c803655923c42e5c07b8080512a2658fcfb0f48`) are published on the Hugging Face Hub: https://huggingface.co/hamidrezaamiri/wmh-medsam-lora-final
 
 The repository includes:
 
